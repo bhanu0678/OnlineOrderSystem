@@ -1,0 +1,47 @@
+﻿@model OnlineFoodOrder.Models.Productmenu
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@*<h1>Create</h1>*@
+
+<h4>Productmenu</h4>
+<hr />
+<div class="container">
+<div class="row">
+    <div class="col-md-4">
+       @* <form asp-action="Create">*@
+            <form method="post" enctype="multipart/form-data" asp-action="create" asp-controller="Admin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-4">
+                <label asp-for="ImagePath" class="control-label"></label>
+                <input type="File" class="form-control" asp-for="ImagePath" />
+                <span asp-validation-for="ImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" placeholder="enter your title"class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <label asp-for="Description"  class="control-label"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <label asp-for="Price"  class=" control-label"></label>
+                <input asp-for="Price" class="form-control"/>
+                @*<span asp-validation-for="Price" class="text-danger"></span>*@
+            </div>
+            <div class="form-group mb-4" style="margin-top:10px;">
+                <input type="submit" value="submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

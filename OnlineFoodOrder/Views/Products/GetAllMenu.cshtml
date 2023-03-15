@@ -1,0 +1,63 @@
+﻿@model IEnumerable<OnlineFoodOrder.Models.Productmenu>
+@{
+    ViewData["Title"] = "GetAllMenu";
+}
+
+@*<h1>GetAllMenu</h1>*@
+
+
+
+
+<div class="container">
+
+<div class="row">
+
+
+    <h3 class="display-4 text-center" style="font-family:'Agency FB';font-size:65px;" >List of All items</h3>
+
+        @foreach (var item in Model)
+        {
+            
+            <div class="col-md-4" id="menuitems">
+
+                <div class="card flex-container" >
+                    
+                   @*<img src="~/Productimages/images200d3eed-c57e-4da1-9e7a-2b99919d57821501791674-delish-chicken-curry-horizontal.jpg">*@
+                    <img src="@Url.Content(item.Image_url)" class="activenow" style="object-fit:cover;">
+                 
+                <div class="card-body">
+                        <h5 class="Card title">@item.Title</h5>
+                <p class="card-text">@item.Description</p>
+                <h3 class="pricing-price">@item.Price $</h3>
+               @* <a href="Details" class="btn btn-primary">Order</a>*@
+              @*   <button type="button" class="btn btn-primary">Details</button>*@
+
+                        
+                        <a asp-action="Details" asp-controller="Products" asp-route-id="@item.Id" class="btn btn-outline-success form-control">AddToCart</a>
+             </div>
+            </div>
+
+                </div>
+
+        }
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+

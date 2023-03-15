@@ -1,0 +1,27 @@
+﻿@model OnlineFoodOrder.Models.Cart
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+<form method="post">
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <img src="~/Productimages/images/@Model.Productmenu.Image_url">
+        </div>
+
+        <div class="col-6">
+            <h2>@Model.Productmenu.Title</h2>
+            <p>@Model.Productmenu.Description</p>
+            <p>@Model.Productmenu.Price.ToString()</p>
+        </div>
+    </div>
+
+
+</form>
+
